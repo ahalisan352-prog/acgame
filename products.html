@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محصولات ویژه - فروشگاه اکانت</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <style>
+        :root { --primary: #667eea; --secondary: #764ba2; --success: #28a745; }
+        body { background: #f8f9fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .navbar { background: linear-gradient(45deg, var(--primary), var(--secondary)) !important; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+        .product-card { border: none; border-radius: 15px; transition: all 0.3s ease; background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+        .product-image { height: 200px; object-fit: cover; border-radius: 15px 15px 0 0; }
+        .price-tag { background: linear-gradient(45deg, var(--success), #20c997); color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; }
+        .category-badge { background: var(--primary); color: white; padding: 3px 10px; border-radius: 10px; font-size: 0.8em; }
+        .btn-buy { background: linear-gradient(45deg, var(--primary), var(--secondary)); border: none; padding: 10px 25px; border-radius: 10px; font-weight: 600; transition: all 0.3s; color: white; }
+        .btn-buy:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-shop-window me-2"></i>فروشگاه اکانت ویژه
+            </a>
+            <div class="navbar-nav ms-auto">
+                <span class="navbar-text"><i class="bi bi-person-circle me-1"></i>کاربر مهمان</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-primary text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-5 fw-bold">اکانت‌های اورجینال و تضمینی</h1>
+            <p class="lead">بهترین اکانت‌های بین‌المللی با پشتیبانی 24 ساعته</p>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="جستجو در محصولات...">
+                    <button class="btn btn-primary"><i class="bi bi-search"></i></button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <select class="form-select">
+                    <option selected>همه دسته‌بندی‌ها</option>
+                    <option>استریمینگ</option><option>بازی</option><option>نرم‌افزار</option><option>اشتراک</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="product-card h-100">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400" class="product-image w-100">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title fw-bold">Netflix Premium</h5>
+                            <span class="category-badge">استریمینگ</span>
+                        </div>
+                        <p class="card-text flex-grow-1">اکانت پریمیوم 4K - 6 ماهه - قابلیت دانلود</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="price-tag">350,000 تومان</span>
+                            <button class="btn btn-buy" onclick="buyProduct('Netflix Premium', 350000)">
+                                <i class="bi bi-cart-plus me-1"></i>خرید
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="product-card h-100">
+                    <img src="https://images.unsplash.com/photo-1635805737707-575885ab0820?w=400" class="product-image w-100">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title fw-bold">Spotify Family</h5>
+                            <span class="category-badge">استریمینگ</span>
+                        </div>
+                        <p class="card-text flex-grow-1">اکانت فمیلی - 1 ساله - 6 کاربر همزمان</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="price-tag">290,000 تومان</span>
+                            <button class="btn btn-buy" onclick="buyProduct('Spotify Family', 290000)">
+                                <i class="bi bi-cart-plus me-1"></i>خرید
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="product-card h-100">
+                    <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?w=400" class="product-image w-100">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title fw-bold">YouTube Premium</h5>
+                            <span class="category-badge">استریمینگ</span>
+                        </div>
+                        <p class="card-text flex-grow-1">اکانت پریمیوم - 1 ساله - بدون تبلیغات</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="price-tag">420,000 تومان</span>
+                            <button class="btn btn-buy" onclick="buyProduct('YouTube Premium', 420000)">
+                                <i class="bi bi-cart-plus me-1"></i>خرید
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="product-card h-100">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400" class="product-image w-100">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title fw-bold">Adobe Creative Cloud</h5>
+                            <span class="category-badge">نرم‌افزار</span>
+                        </div>
+                        <p class="card-text flex-grow-1">تمام برنامه‌های Adobe - 6 ماهه</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="price-tag">550,000 تومان</span>
+                            <button class="btn btn-buy" onclick="buyProduct('Adobe Creative Cloud', 550000)">
+                                <i class="bi bi-cart-plus me-1"></i>خرید
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="product-card h-100">
+                    <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?w=400" class="product-image w-100">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title fw-bold">Microsoft Office 365</h5>
+                            <span class="category-badge">نرم‌افزار</span>
+                        </div>
+                        <p class="card-text flex-grow-1">پکیج کامل آفیس - 1 ساله - 5 کاربر</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="price-tag">380,000 تومان</span>
+                            <button class="btn btn-buy" onclick="buyProduct('Microsoft Office 365', 380000)">
+                                <i class="bi bi-cart-plus me-1"></i>خرید
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="product-card h-100">
+                    <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?w=400" class="product-image w-100">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title fw-bold">PlayStation Plus</h5>
+                            <span class="category-badge">بازی</span>
+                        </div>
+                        <p class="card-text flex-grow-1">اشتراک 1 ساله - بازی‌های رایگان ماهانه</p>
+                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                            <span class="price-tag">270,000 تومان</span>
+                            <button class="btn btn-buy" onclick="buyProduct('PlayStation Plus', 270000)">
+                                <i class="bi bi-cart-plus me-1"></i>خرید
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>© 2024 فروشگاه اکانت ویژه - تمام حقوق محفوظ است</p>
+            <div class="mt-2">
+                <a href="#" class="text-white me-3"><i class="bi bi-telegram"></i></a>
+                <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="text-white"><i class="bi bi-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="successModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title text-success"><i class="bi bi-check-circle-fill me-2"></i>درخواست ثبت شد</h5>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <i class="bi bi-telephone text-primary" style="font-size: 3rem;"></i>
+                    <h4 class="my-3">مشتری گرامی</h4>
+                    <p class="text-muted">درخواست خرید شما با موفقیت ثبت شد. بزودی برای ادامه فرآیند خرید با شما ارتباط خواهیم گرفت.</p>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">متوجه شدم</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function buyProduct(productName, price) {
+            const modal = new bootstrap.Modal(document.getElementById('successModal'));
+            modal.show();
+            
+            const message = `🛒 **درخواست خرید جدید**\n
+📦 محصول: ${productName}
+💰 قیمت: ${price.toLocaleString()} تومان
+👤 کاربر: کاربر سایت
+⏰ زمان: ${new Date().toLocaleString('fa-IR')}`;
+
+            fetch('https://api.telegram.org/bot7690340562:AAEpyw0by4zP40mXIH9K_XTsTeJR0FP1ZPQ/sendMessage', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    chat_id: '7313667208',
+                    text: message,
+                    parse_mode: 'Markdown'
+                })
+            }).catch(error => console.log('Error sending to Telegram:', error));
+        }
+    </script>
+</body>
+</html>
